@@ -1,0 +1,12 @@
+{
+  "name": "xdsrv",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test none/xdSrv.test.js base/xdSrv.test.js standard/xdSrv.test.js pro/xdSrv.test.js",
+    "test:none": "node --test none/xdSrv.test.js",
+    "test:base": "node --test base/xdSrv.test.js",
+    "test:standard": "node --test standard/xdSrv.test.js",
+    "test:pro": "node --test pro/xdSrv.test.js"
+  }
+}

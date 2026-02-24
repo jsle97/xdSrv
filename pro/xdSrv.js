@@ -2723,7 +2723,7 @@ const createServerApp = (options = {}) => {
 
    response.on('finish', () => {
     const duration = Number(process.hrtime.bigint() - startTime) / 1e6;
-    response.setHeader('x-response-time', duration.toFixed(2) + 'ms');
+    try { if (!response.headersSent) response.setHeader('x-response-time', duration.toFixed(2) + 'ms'); } catch {}
     logger.info(`${request.method} ${request.path} ${response.statusCode} ${duration.toFixed(1)}ms`, {
      method: request.method, path: request.path, status: response.statusCode,
      duration: parseFloat(duration.toFixed(2)), ip: request.ip, requestId
